@@ -14,6 +14,20 @@ function addR() {
     // Insert a cell in the 0th position of the row in the grid
     row.insertCell(0);
 
+    // Accessing the last row of the grid to see how many columns
+    // the new added row will need to match
+    let numOfColumns = grid.rows[grid.rows.length-1].cells.length-1;
+
+    // Checks if there needs to be extra columns in the new rows
+    if(numOfColumns > 1)
+    {   
+        // Loops through the amount of times needed adding the extra cells
+        for(let i = 0; i < numOfColumns; ++i)
+        {
+            row.insertCell(0);
+        }
+    }
+
     console.log("Clicked Add Row")
 }
 //Adds a column
