@@ -30,16 +30,31 @@ function addR() {
 
     console.log("Clicked Add Row")
 }
+
 //Adds a column
 function addC() {
-    //let grid = document.getElementById("grid");
-    let rows = document.querySelectorAll("tr");
 
-    for(let i = 0; i < rows.length; ++i)
+    // Accessing the table element using the DOM
+    let grid = document.getElementById("grid");
+
+    // Node list of all the rows in the table
+    let allRows = document.querySelectorAll("tr");
+
+    // Iterating through each row to add a cell
+    for(let i = 0; i < allRows.length; ++i)
     {
-        let currentRow = rows[i];
 
-        currentRow.insertCell(-1);
+        // Accessing the current row
+        let currentRow = allRows[i];
+
+        currentRow.insertCell(0);
+    }
+
+    // Checks if there are no rows so that add column works without any rows to start
+    if(allRows.length < 1)
+    {
+        let row = grid.insertRow(0);
+        row.insertCell(0);
     }
 
     console.log("Clicked Add Col")
