@@ -18,6 +18,16 @@ function addR() {
 }
 //Adds a column
 function addC() {
+    //let grid = document.getElementById("grid");
+    let rows = document.querySelectorAll("tr");
+
+    for(let i = 0; i < rows.length; ++i)
+    {
+        let currentRow = rows[i];
+
+        currentRow.insertCell(-1);
+    }
+
     console.log("Clicked Add Col")
 }
 
