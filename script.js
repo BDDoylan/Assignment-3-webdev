@@ -19,7 +19,7 @@ function addR() {
     let numOfColumns = grid.rows[grid.rows.length-1].cells.length-1;
 
     // Checks if there needs to be extra columns in the new rows
-    if(numOfColumns > 1)
+    if(numOfColumns >= 1)
     {   
         // Loops through the amount of times needed adding the extra cells
         for(let i = 0; i < numOfColumns; ++i)
@@ -41,7 +41,7 @@ function addC() {
     let allRows = document.querySelectorAll("tr");
 
     // Iterating through each row to add a cell
-    for(let i = 0; i < allRows.length; ++i)
+    for(let i = 0; i < allRows.length; i++)
     {
 
         // Accessing the current row
@@ -62,12 +62,18 @@ function addC() {
 
 //Removes a row
 function removeR() {
+
+    // Deleting a row on click
+    document.getElementById("grid").deleteRow(0);
+
     console.log("Clicked Remove Row")
 }
+
 //Remove a column
 function removeC() {
     console.log("Clicked Remove Col")
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
