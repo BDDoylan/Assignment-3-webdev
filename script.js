@@ -1,5 +1,3 @@
-let numRows = 0;
-let numCols = 0;
 let colorSelected; 
 
 //Adds a row
@@ -102,7 +100,24 @@ function removeC() {
 
 //sets global var for selected color
 function selected(){
+
+    // Accessing value from the selectedID 
     colorSelected = document.getElementById("selectedID").value;
+
+    // Function used in event listener to change specific selected box to desired color
+    function selectedChange(event)
+    {
+        // The condition that the listener bases on when clicked to determine which cell needs to be changed
+        if(event.target.nodeName.toLowerCase() === "td")
+        {
+            // Changes background to the selected color
+            event.target.style.backgroundColor = colorSelected;
+        }
+    }
+
+    // Accesses grid to add the event listener
+    document.getElementById("grid").addEventListener("click", selectedChange);
+
     console.log(colorSelected);
 }
 
