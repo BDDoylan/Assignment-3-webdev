@@ -139,6 +139,17 @@ function clearAll(){
     console.log("Clicked Clear All")
 }
 
+// Fills every cell that is uncolored with the selected color
 function fillU(){
+
+    // Goes through every cell one by one and checks if the cell is white, and if it is 
+    // it changes the cell to the selected color
+    document.querySelectorAll('td').forEach(function(td){
+        if(td.style.backgroundColor === "white")
+        {
+            td.style.backgroundColor = document.getElementById("selectedID").value;
+        }
+    });
+
     console.log("Clicked Fill All Uncolored")
 }
