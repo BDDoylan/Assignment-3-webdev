@@ -106,7 +106,12 @@ function selected(){
     console.log(colorSelected);
 }
 
+// Fills every cell with the selected color
 function fill(){
+
+    // Goes through every cell one by one and changes the color based on the value of selectedID
+    document.querySelectorAll('td').forEach(td => td.style.backgroundColor = document.getElementById("selectedID").value);
+
     console.log("Clicked Fill All")
 }
 
