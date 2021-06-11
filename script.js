@@ -115,7 +115,12 @@ function fill(){
     console.log("Clicked Fill All")
 }
 
+// Resets every cell to its initial color value
 function clearAll(){
+
+    // Goes through every cell one by one and changes the color to white
+    document.querySelectorAll('td').forEach(td => td.style.backgroundColor = "white");
+
     console.log("Clicked Clear All")
 }
 
