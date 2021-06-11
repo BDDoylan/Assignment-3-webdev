@@ -71,6 +71,32 @@ function removeR() {
 
 //Remove a column
 function removeC() {
+
+    // Node list of all the rows in the table
+    let allRows = document.querySelectorAll("tr");
+
+    // Iterating through each row to remove one cell
+    for(let i = 0; i < allRows.length; i++)
+    {
+    
+        // Accessing the current row
+        let currentRow = allRows[i];
+        
+        currentRow.deleteCell(0);
+    }
+
+    //  Checks if when clicking remove column there is nothing left so it can 
+    // delete all previous added rows so it does not create a bug for when next 
+    // creating a column
+    if(allRows[0].cells.length === 0){
+
+        // Iterates through rows to delete them one by one
+        for(let j = 0; j < allRows.length; j++)
+        {
+            document.getElementById("grid").deleteRow(0);
+        }
+    }
+
     console.log("Clicked Remove Col")
 }
 
